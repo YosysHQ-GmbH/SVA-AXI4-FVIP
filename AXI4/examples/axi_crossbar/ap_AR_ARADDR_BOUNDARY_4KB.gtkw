@@ -1,0 +1,121 @@
+[*]
+[*] GTKWave Analyzer v3.3.110 (w)1999-2020 BSI
+[*] Tue Jun 29 01:59:36 2021
+[*]
+[dumpfile] "/home/dh/work/original/AXI/AXI4/examples/axi_crossbar/axi_crossbar_prove/engine_0/trace_induct.vcd"
+[dumpfile_mtime] "Tue Jun 29 01:44:55 2021"
+[dumpfile_size] 288955
+[savefile] "/home/dh/work/original/AXI/AXI4/examples/axi_crossbar/ap_AR_ARADDR_BOUNDARY_4KB.gtkw"
+[timestart] 0
+[size] 1436 657
+[pos] 154 190
+*-5.533648 190 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] axi_crossbar.
+[treeopen] axi_crossbar.source_chk.
+[sst_width] 284
+[signals_width] 215
+[sst_expanded] 1
+[sst_vpaned_height] 176
+@28
+smt_clock
+@420
+smt_step
+@28
+axi_crossbar.source_chk.AR_channel_checker.ACLK
+axi_crossbar.source_chk.AR_channel_checker.ARVALID
+@22
+axi_crossbar.source_chk.AR_channel_checker.ARBURST[1:0]
+axi_crossbar.source_chk.AR_channel_checker.ARLEN[7:0]
+@28
+axi_crossbar.source_chk.AR_channel_checker.ARSIZE[2:0]
+@23
+[color] 1
+axi_crossbar.source_chk.AR_channel_checker.ar_4KB_boundary
+@c00022
+[color] 1
+#{axi_crossbar.source_chk.AR_channel_checker.end_addr[31:12]} (0)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (1)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (2)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (3)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (4)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (5)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (6)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (7)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (8)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (9)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (10)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (11)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (12)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (13)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (14)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (15)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (16)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (17)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (18)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0] (19)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+@28
+(0)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(1)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(2)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(3)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(4)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(5)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(6)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(7)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(8)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(9)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(10)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(11)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(12)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(13)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(14)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(15)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(16)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(17)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(18)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(19)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+@1401200
+-group_end
+@c00022
+[color] 1
+#{axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:12]} (0)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (1)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (2)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (3)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (4)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (5)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (6)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (7)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (8)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (9)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (10)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (11)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (12)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (13)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (14)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (15)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (16)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (17)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (18)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0] (19)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+@28
+(0)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(1)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(2)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(3)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(4)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(5)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(6)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(7)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(8)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(9)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(10)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(11)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(12)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(13)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(14)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(15)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(16)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(17)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(18)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(19)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+@1401200
+-group_end
+@c00022
+axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+@28
+(20)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(21)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(22)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(23)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(24)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(25)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(26)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(27)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(28)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(29)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(30)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+(31)axi_crossbar.source_chk.AR_channel_checker.ARADDR[31:0]
+@1401200
+-group_end
+@c00022
+axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+@28
+(20)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(21)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(22)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(23)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(24)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(25)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(26)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(27)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(28)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(29)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(30)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+(31)axi_crossbar.source_chk.AR_channel_checker.end_addr[31:0]
+@1401200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,73 @@
+[tasks]
+prove
+cover
+
+[options]
+prove: mode bmc
+depth 64
+cover: mode cover
+
+[engines]
+smtbmc boolector
+
+[script]
+# Read packages first
+read -sv amba_axi4_protocol_checker_pkg.sv
+read -sv amba_axi4_single_interface_requirements.sv
+read -sv amba_axi4_definition_of_axi4_lite.sv
+read -sv amba_axi4_atomic_accesses.sv
+read -sv amba_axi4_transaction_structure.sv
+read -sv amba_axi4_transaction_attributes.sv
+read -sv amba_axi4_protocol_checker.sv
+
+# new checkers
+read -sv amba_axi4_write_response_dependencies.sv
+read -sv amba_axi4_exclusive_access_source_perspective.sv
+
+# Then the IP
+read -incdir ../../../../src
+read -sv amba_axi4_write_response_channel.sv
+read -sv amba_axi4_write_address_channel.sv
+read -sv amba_axi4_write_data_channel.sv
+read -sv amba_axi4_read_data_channel.sv
+read -sv amba_axi4_read_address_channel.sv
+read -sv testbench.sv
+
+# Then the crossbar sources
+read -sv axi_crossbar_wr.v
+read -sv axi_register_rd.v
+read -sv arbiter.v
+read -sv axi_crossbar_addr.v
+read -sv axi_crossbar.v
+read -sv axi_register_wr.v
+read -sv priority_encoder.v
+read -sv axi_crossbar_rd.v
+
+
+# Report later: If I run without flatten, all properties with $rose fails
+prep -flatten -top axi_crossbar
+
+[files]
+../../src/amba_axi4_write_response_channel.sv
+../../src/amba_axi4_write_address_channel.sv
+../../src/amba_axi4_write_data_channel.sv
+../../src/amba_axi4_read_data_channel.sv
+../../src/amba_axi4_read_address_channel.sv
+../../src/amba_axi4_protocol_checker.sv
+testbench.sv
+../../src/amba_axi4_protocol_checker_pkg.sv
+../../src/axi4_spec/amba_axi4_single_interface_requirements.sv
+../../src/axi4_spec/amba_axi4_definition_of_axi4_lite.sv
+../../src/axi4_spec/amba_axi4_atomic_accesses.sv
+../../src/axi4_spec/amba_axi4_transaction_structure.sv
+../../src/axi4_spec/amba_axi4_transaction_attributes.sv
+../../src/axi4_lib/amba_axi4_write_response_dependencies.sv
+../../src/axi4_lib/amba_axi4_exclusive_access_source_perspective.sv
+axi_crossbar_wr.v
+axi_register_rd.v
+arbiter.v
+axi_crossbar_addr.v
+axi_crossbar.v
+axi_register_wr.v
+priority_encoder.v
+axi_crossbar_rd.v

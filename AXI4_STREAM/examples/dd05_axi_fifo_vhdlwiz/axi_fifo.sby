@@ -1,0 +1,24 @@
+[tasks]
+provemode
+covermode
+
+[options]
+provemode: mode prove
+covermode: mode cover
+
+[engines]
+provemode: smtbmc boolector
+covermode: smtbmc boolector
+
+[script]
+read -sv amba_axi4_stream_pkg.sv
+read -vhdl2008 axi_fifo.vhd
+read -sv amba_axi4_formal_checker.sv
+read -sv amba_axi4_stream.sv
+prep -top axi_fifo
+
+[files]
+amba_axi4_stream_pkg.sv
+axi_fifo.vhd
+amba_axi4_formal_checker.sv
+../../amba_axi4_stream.sv

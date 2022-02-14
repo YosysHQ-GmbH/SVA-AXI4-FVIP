@@ -1,0 +1,31 @@
+[tasks]
+provemode
+covermode
+
+[options]
+provemode: mode prove
+covermode: mode cover
+
+[engines]
+provemode: smtbmc
+covermode: smtbmc
+
+[script]
+provemode: read -sv amba_axi4_stream_pkg.sv
+provemode: read -sv amba_axi4_stream.sv
+provemode: read -sv axis_fifo.v
+provemode: read -sv axis_fifo_protocol_check.sv
+provemode: prep -flatten -top axis_fifo
+
+covermode: read -sv amba_axi4_stream_pkg.sv
+covermode: read -sv amba_axi4_stream.sv
+covermode: read -sv axis_fifo.v
+covermode: read -sv axis_fifo_protocol_check.sv
+covermode: verific -import -autocover axis_fifo
+covermode: prep -flatten -top axis_fifo
+
+[files]
+amba_axi4_stream_pkg.sv
+../../amba_axi4_stream.sv
+axis_fifo.v
+axis_fifo_protocol_check.sv

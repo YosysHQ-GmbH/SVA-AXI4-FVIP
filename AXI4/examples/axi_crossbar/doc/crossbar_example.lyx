@@ -1,0 +1,962 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[scale=0.75]{geometry}
+\usepackage{apacite}
+%\usepackage[english]{babel}
+
+\usepackage{xcolor}
+\usepackage{listings}
+
+\usepackage{minted}
+\usemintedstyle{pastie}
+
+\definecolor{vgreen}{RGB}{104,180,104}
+\definecolor{vblue}{RGB}{49,49,255}
+\definecolor{vorange}{RGB}{255,143,102}
+
+\lstdefinestyle{verilog-style}
+{
+    language=Verilog,
+    basicstyle=\small\ttfamily,
+    keywordstyle=\color{vblue},
+    identifierstyle=\color{black},
+    commentstyle=\color{vgreen},
+    numbers=left,
+    numberstyle=\tiny\color{black},
+    numbersep=10pt,
+    tabsize=8,
+    moredelim=*[s][\colorIndex]{[}{]},
+    literate=*{:}{:}1
+}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+YosysHQ SVA AXI Properties - Crossbar Example
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Introduction
+\end_layout
+
+\begin_layout Section
+Preface
+\end_layout
+
+\begin_layout Subsection
+Description
+\end_layout
+
+\begin_layout Standard
+The following example shows how to use the YosysHQ SVA AXI Formal IP to
+ verify 
+\begin_inset CommandInset href
+LatexCommand href
+name "Alex Forencich's AXI4 Crossbar"
+target "https://github.com/alexforencich/verilog-axi/blob/master/rtl/axi_crossbar.v"
+literal "false"
+
+\end_inset
+
+.
+ It is demonstrated that, with the current status of development of the
+ IP, several errors are detected in that crossbar design.
+\end_layout
+
+\begin_layout Subsection
+Scope and limitations
+\end_layout
+
+\begin_layout Itemize
+Not all AXI4-full behaviors are covered yet, there is still work in progress
+ for the data transport checks as well.
+
+\series bold
+ This guide is an early demonstration example.
+\end_layout
+
+\begin_layout Itemize
+The AXI4-full subset of properties are still being developed at the moment,
+ so there exist some holes that are not yet covered by the formal IP.
+\end_layout
+
+\begin_layout Itemize
+This example shows the usage of the IP, a recipe of SBY and a debugging
+ methodology.
+ Feedback for improvement is very welcome.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Note:
+\series default
+ The YosysHQ AXI4 SVA Formal IP covers the AMBA ARM specification IHI version
+ 0022E.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Architecture of the Test
+\end_layout
+
+\begin_layout Section
+Verification Plan
+\end_layout
+
+\begin_layout Standard
+To verify this crossbar, a simple source to destination (1S:1D) topology
+ for the crossbar is selected for the sake of simplicity.
+ This is done by setting both S_COUNT and M_COUNT parameters of the axi_crossbar.
+v file as follows:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand inputminted
+filename "/home/dh/work/original/AXI/AXI4/examples/axi_crossbar/axi_crossbar.v"
+lstparams "language=systemverilog,style={verilog-style},breaklines=true,frame=lines,framesep=2mm,fontsize={\\footnotesize},firstline=34,lastline=37,style=manni"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Configuring the axi_crossbar.v module.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By using two YosysHQ AXI4 agents, one acting as source (that will provide
+ constraints for source inputs and assertions for source outputs), and other
+ acting as destination (that will provide constraints for destination inputs
+ and assertions for destination outputs) the crossbar invariant (or interface)
+ functions will be monitored for any kind of failures.
+ The following section shows a block diagram of this configuration.
+\end_layout
+
+\begin_layout Section
+Block Diagram
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename arch.png
+	display false
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Block diagram of the AXI crossbar test.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Block-diagram-of"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+TabbyCAD Setup for AXI4 Formal Crossbar Checks
+\end_layout
+
+\begin_layout Section
+The YosysHQ AXI4 Formal Configuration
+\end_layout
+
+\begin_layout Standard
+The file 
+\series bold
+testbench.sv
+\series default
+ instantiates and configures both 
+\series bold
+source
+\series default
+ and 
+\series bold
+destination
+\series default
+ agents as shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Block-diagram-of"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The source agent (to check for source behaviors) is configured as follows:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand inputminted
+filename "/home/dh/work/original/AXI/AXI4/examples/axi_crossbar/testbench.sv"
+lstparams "language=systemverilog,style={verilog-style},breaklines=true,frame=lines,framesep=2mm,fontsize={\\footnotesize},firstline=19,lastline=39,style=manni"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Binding the YosysHQ AXI4 Formal IP to the crossbar as a source agent.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The destination agent (to check for destination behaviors) is configured
+ as follows:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand inputminted
+filename "/home/dh/work/original/AXI/AXI4/examples/axi_crossbar/testbench.sv"
+lstparams "language=systemverilog,style={verilog-style},breaklines=true,frame=lines,framesep=2mm,fontsize={\\footnotesize},firstline=92,lastline=110,style=manni"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Binding the YosysHQ AXI4 Formal IP to the crossbar as a destination agent.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+The SymbiYosys File
+\end_layout
+
+\begin_layout Standard
+The main file is axi_crossbar.sby and the contents are described below.
+\end_layout
+
+\begin_layout Subsection
+Tasks
+\end_layout
+
+\begin_layout Standard
+There are two main tasks in the SBY file:
+\end_layout
+
+\begin_layout Itemize
+Task prove: Enable assertions and restrictions for validity tests.
+\end_layout
+
+\begin_layout Itemize
+Task cover: Enable covers for satisfiability tests.
+\end_layout
+
+\begin_layout Standard
+Running 
+\series bold
+sby -f axi_crossbar.sby cover | prove
+\series default
+ will run SymbiYosys in either cover or prove mode depending on the argument
+ chosen by the user.
+ Running 
+\series bold
+sby -f axi_crossbar.sby
+\series default
+ without arguments will run both cover and prove tasks at once.
+\end_layout
+
+\begin_layout Subsection
+Options and Engines
+\end_layout
+
+\begin_layout Standard
+The section 
+\series bold
+options 
+\series default
+has information to enable both prove and cover mode as shown below.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand inputminted
+filename "/home/dh/work/original/AXI/AXI4/examples/axi_crossbar/axi_crossbar.sby"
+lstparams "language=bash,style={verilog-style},breaklines=true,frame=lines,framesep=2mm,fontsize={\\footnotesize},firstline=5,lastline=7,style=manni"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The SBY file options.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The selected engine for this example is 
+\series bold
+boolector
+\series default
+, and is defined as follows:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand inputminted
+filename "/home/dh/work/original/AXI/AXI4/examples/axi_crossbar/axi_crossbar.sby"
+lstparams "language=bash,style={verilog-style},breaklines=true,frame=lines,framesep=2mm,fontsize={\\footnotesize},firstline=9,lastline=10,style=manni"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The SBY engine options.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Script
+\end_layout
+
+\begin_layout Standard
+Finally, all the required files and the specific order is defined in the
+ 
+\series bold
+script
+\series default
+ section as follows:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand inputminted
+filename "/home/dh/work/original/AXI/AXI4/examples/axi_crossbar/axi_crossbar.sby"
+lstparams "language=bash,style={verilog-style},breaklines=true,frame=lines,framesep=2mm,fontsize={\\footnotesize},firstline=12,lastline=43,style=manni"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The SBY script options.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Note:
+\series default
+ The YosysHQ AXI4 sources are provided one by one in the SBY file, and not
+ in a less verbose way such as include files, to be able to preview the
+ source code in the SBY-GUI tool.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Running with SBY-GUI
+\end_layout
+
+\begin_layout Standard
+It is recommended to use the sby-gui interface first to get familiar with
+ the YosysHQ AXI4 Formal IP source organisation and the SBY tool.
+ The Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SBY-Graphical-Interface."
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows this graphical interface that is executed with the following command:
+ 
+\series bold
+sby-gui <folder> 
+\series default
+(in this case <folder> is 
+\series bold
+examples/axi_crossbar
+\series default
+).
+ Executing the 
+\series bold
+play
+\series default
+ button in any of the subwindows will execute the tasks defined in the upper
+ left side.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename sby-gui.jpg
+	display false
+	scale 14
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+SBY Graphical Interface.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:SBY-Graphical-Interface."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Running with Command Line
+\end_layout
+
+\begin_layout Standard
+If command line is preferred, the example can be run with the following
+ command: 
+\series bold
+sby -f axi_crossbar.sby cover | prove
+\series default
+.
+ The user will need to monitor the terminal to check the output of the example.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Errors
+\end_layout
+
+\begin_layout Subsection
+Unreachable Covers
+\end_layout
+
+\begin_layout Standard
+There are 6 unreachable covers:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+source_chk.W_channel_checker.witness.genblk1.wp_WSTRB_NOT_ALL_VALID.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+source_chk.B_channel_checker.witness.wp_BREADY_before_BVALID.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+source_chk.AW_channel_checker.witness.wp_AW_B2B.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+dest_check.AW_channel_checker.witness.wp_AW_NO_WAIT.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+dest_check.AW_channel_checker.witness.wp_AWREADY_before_AWVALID.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+dest_check.AR_channel_checker.witness.wp_ARREADY_before_ARVALID.
+\end_layout
+
+\begin_layout Subsection
+Failed Assertions
+\end_layout
+
+\begin_layout Subsubsection
+Read burst crossing 4K address boundary.
+\end_layout
+
+\begin_layout Standard
+The AXI4 Formal IP found a violation in the crossbar.
+ Around time step 19, 
+\series bold
+ARBURST
+\series default
+ = INCR, 
+\series bold
+ARLEN
+\series default
+ = 1Ch, 
+\series bold
+ARSIZE
+\series default
+ = 1h and 
+\series bold
+ARADDR
+\series default
+ = 1EFE3h giving a final address of 1F01Bh, crossing the 4K boundary.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ar_bound_4k.jpg
+	display false
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Assert failed in axi_crossbar: ap_AR_ARADDR_BOUNDARY_4KB.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Note:
+\series default
+ Signals are already configured to visualise in GTKWave by opening the file
+ ap_AR_ARADDR_BOUNDARY_4KB.gtkw.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is important to mention that this property also fails for AW channel.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Extending Checks
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Appendix
+\end_layout
+
+\end_body
+\end_document

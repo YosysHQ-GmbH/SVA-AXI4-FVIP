@@ -1,0 +1,6 @@
+`include "amba_axi4_protocol_checker.sv"
+`include "amba_axi4_write_response_channel.sv"
+`include "amba_axi4_write_address_channel.sv"
+`include "amba_axi4_write_data_channel.sv"
+`include "amba_axi4_read_data_channel.sv"
+`include "amba_axi4_read_address_channel.sv"

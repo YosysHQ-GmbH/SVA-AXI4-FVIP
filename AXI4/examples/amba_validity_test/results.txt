@@ -1,0 +1,301 @@
+Property List:
+     Assertion  Status        Name
+     proven                   testbench.dut.axi4lite_aux_data_width
+     proven     non_vacuous   testbench.dut.axi4lite_errs_bresp_exokay
+     proven     non_vacuous   testbench.dut.axi4lite_errs_rresp_exokay
+     proven                   testbench.dut.uAxi4PC.axi4_aux_addr_width
+     proven                   testbench.dut.uAxi4PC.axi4_aux_data_width
+     proven     non_vacuous   testbench.dut.uAxi4PC.axi4_aux_excl_overflow
+     proven                   testbench.dut.uAxi4PC.axi4_aux_exmon_width
+     proven                   testbench.dut.uAxi4PC.axi4_aux_maxrbursts
+     proven                   testbench.dut.uAxi4PC.axi4_aux_maxwbursts
+     falsified non_vacuous    testbench.dut.uAxi4PC.axi4_aux_rcam_overflow
+     falsified non_vacuous    testbench.dut.uAxi4PC.axi4_aux_rcam_underflow
+     falsified non_vacuous    testbench.dut.uAxi4PC.axi4_aux_wcam_overflow
+     falsified non_vacuous    testbench.dut.uAxi4PC.axi4_aux_wcam_underflow
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errl_cactive_x
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errl_csysack_fall
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errl_csysack_rise
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errl_csysack_x
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errl_csysreq_fall
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errl_csysreq_rise
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errl_csysreq_x
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_araddr_boundary
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_araddr_stable
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_araddr_wrap_align
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_araddr_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arburst
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arburst_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arburst_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arcache
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arcache_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arcache_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arid_stable
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_arid_tieoff
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arid_x
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_arlen_fixed
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_arlen_lock
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arlen_stable
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_arlen_wrap
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arlen_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arlock_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arlock_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arprot_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arprot_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arqos_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arqos_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arregion_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arregion_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arsize
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arsize_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arsize_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_aruser_stable
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_aruser_tieoff
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_aruser_x
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_arvalid_reset
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arvalid_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_arvalid_x
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_awaddr_boundary
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awaddr_stable
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_awaddr_wrap_align
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awaddr_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awburst
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awburst_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awburst_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awcache
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awcache_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awcache_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awid_stable
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_awid_tieoff
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awid_x
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_awlen_fixed
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_awlen_lock
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awlen_stable
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_awlen_wrap
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awlen_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awlock_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awlock_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awprot_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awprot_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awqos_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awqos_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awregion_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awregion_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awsize
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awsize_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awsize_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awuser_stable
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_awuser_tieoff
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awuser_x
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_awvalid_reset
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awvalid_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_awvalid_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_bready_x
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_excl_align
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_excl_len
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_excl_max
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_rready_x
+     falsified non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wdata_num_prop1
+     falsified non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wdata_num_prop2
+     falsified non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wdata_num_prop3
+     falsified non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wdata_num_prop4
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wdata_num_prop5
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wdata_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wdata_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wlast_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wlast_x
+     falsified non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wstrb
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wstrb_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wstrb_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wuser_stable
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_wuser_tieoff
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wuser_x
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errm_wvalid_reset
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wvalid_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errm_wvalid_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_arready_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_awready_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_bid_stable
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errs_bid_tieoff
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_bid_x
+     falsified non_vacuous    testbench.dut.uAxi4PC.axi4_errs_bresp_aw
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errs_bresp_exokay
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_bresp_stable
+     falsified non_vacuous    testbench.dut.uAxi4PC.axi4_errs_bresp_wlast
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_bresp_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_buser_stable
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errs_buser_tieoff
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_buser_x
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errs_bvalid_reset
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_bvalid_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_bvalid_x
+     falsified non_vacuous    testbench.dut.uAxi4PC.axi4_errs_rdata_num
+     falsified non_vacuous    testbench.dut.uAxi4PC.axi4_errs_rdata_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_rdata_x
+     falsified non_vacuous    testbench.dut.uAxi4PC.axi4_errs_rid
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_rid_stable
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errs_rid_tieoff
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_rid_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_rlast_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_rlast_x
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errs_rresp_exokay
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_rresp_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_rresp_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_ruser_stable
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errs_ruser_tieoff
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_ruser_x
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_errs_rvalid_reset
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_rvalid_stable
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_rvalid_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_errs_wready_x
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_recm_bready_max_wait
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_recm_excl_match
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_recm_excl_pair
+     vacuous   vacuous        testbench.dut.uAxi4PC.axi4_recm_excl_r_w
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_recm_rready_max_wait
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_recs_arready_max_wait
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_recs_awready_max_wait
+     proven    non_vacuous    testbench.dut.uAxi4PC.axi4_recs_wready_max_wait
+     proven    non_vacuous    testbench.asserts_provider.AR_channel_checker.genblk11.ap_AR_STABLE_ARPROT
+     proven    non_vacuous    testbench.asserts_provider.AR_channel_checker.genblk15.genblk1.ap_AR_EXIT_RESET
+     proven    non_vacuous    testbench.asserts_provider.AR_channel_checker.genblk16.ap_AR_ARVALID_until_ARREADY
+     proven    non_vacuous    testbench.asserts_provider.AR_channel_checker.genblk17.genblk1.ap_AR_READY_MAXWAIT
+     proven    non_vacuous    testbench.asserts_provider.AR_channel_checker.genblk3.ap_AR_STABLE_ARADDR
+     proven    non_vacuous    testbench.asserts_provider.AR_channel_checker.genblk8.genblk1.ap_AR_UNSUPPORTED_EXCLUSIVE
+     proven                   testbench.assumes_provider.R_channel_checker.axi4lite_defs.check_dataw.ap_R_AXI4LITE_DATAWIDTH
+     proven                   testbench.asserts_provider.R_channel_checker.axi4lite_defs.check_dataw.ap_R_AXI4LITE_DATAWIDTH
+     proven    non_vacuous    testbench.asserts_provider.R_channel_checker.deadlock_check.ap_R_READY_MAXWAIT
+     proven    non_vacuous    testbench.asserts_provider.R_channel_checker.genblk3.ap_R_STABLE_RDATA
+     proven    non_vacuous    testbench.asserts_provider.R_channel_checker.genblk4.ap_R_STABLE_RRESP
+     proven    non_vacuous    testbench.asserts_provider.R_channel_checker.genblk5.genblk1.ap_R_UNSUPPORTED_RESPONSE
+     proven    non_vacuous    testbench.asserts_provider.R_channel_checker.genblk6.ap_R_STABLE_RLAST
+     proven    non_vacuous    testbench.asserts_provider.R_channel_checker.genblk7.ap_R_STABLE_RUSER
+     proven    non_vacuous    testbench.asserts_provider.R_channel_checker.genblk8.genblk1.ap_R_EXIT_RESET
+     proven    non_vacuous    testbench.asserts_provider.R_channel_checker.genblk9.ap_R_RVALID_until_RREADY
+     proven                   testbench.assumes_provider.AW_channel_checker.axi4lite_defs.check_dataw.ap_W_AXI4LITE_DATAWIDTH
+     proven                   testbench.asserts_provider.AW_channel_checker.axi4lite_defs.check_dataw.ap_W_AXI4LITE_DATAWIDTH
+     proven    non_vacuous    testbench.asserts_provider.AW_channel_checker.genblk10.ap_AW_STABLE_AWPROT
+     proven    non_vacuous    testbench.asserts_provider.AW_channel_checker.genblk12.genblk1.ap_AW_EXIT_RESET
+     proven    non_vacuous    testbench.asserts_provider.AW_channel_checker.genblk13.ap_AW_AWVALID_until_AWREADY
+     proven    non_vacuous    testbench.asserts_provider.AW_channel_checker.genblk14.genblk1.ap_AW_READY_MAXWAIT
+     proven    non_vacuous    testbench.asserts_provider.AW_channel_checker.genblk3.ap_AW_STABLE_AWADDR
+     vacuous   vacuous        testbench.asserts_provider.AW_channel_checker.genblk3.ap_AW_address_alignment
+     proven    non_vacuous    testbench.asserts_provider.AW_channel_checker.genblk9.genblk1.ap_AW_UNSUPPORTED_EXCLUSIVE
+     proven                   testbench.assumes_provider.W_channel_checker.axi4lite_defs.check_dataw.ap_W_AXI4LITE_DATAWIDTH
+     proven                   testbench.asserts_provider.W_channel_checker.axi4lite_defs.check_dataw.ap_W_AXI4LITE_DATAWIDTH
+     proven    non_vacuous    testbench.asserts_provider.W_channel_checker.genblk3.ap_W_STABLE_WDATA
+     proven    non_vacuous    testbench.asserts_provider.W_channel_checker.genblk4.ap_W_STABLE_WSTRB
+     proven    non_vacuous    testbench.asserts_provider.W_channel_checker.genblk4.genblk1.ap_W_FULL_TRANSACTION_OPTIONAL_WSTRB
+     proven    non_vacuous    testbench.asserts_provider.W_channel_checker.genblk7.genblk1.ap_W_EXIT_RESET
+     proven    non_vacuous    testbench.asserts_provider.W_channel_checker.genblk8.ap_W_AWVALID_until_AWREADY
+     proven    non_vacuous    testbench.asserts_provider.W_channel_checker.genblk9.genblk1.ap_W_READY_MAXWAIT
+     proven    non_vacuous    testbench.asserts_provider.B_channel_checker.genblk3.ap_AW_STABLE_BRESP
+     proven    non_vacuous    testbench.asserts_provider.B_channel_checker.genblk4.genblk1.ap_B_UNSUPPORTED_RESPONSE
+     proven    non_vacuous    testbench.asserts_provider.B_channel_checker.genblk5.ap_AW_STABLE_BUSER
+     proven    non_vacuous    testbench.asserts_provider.B_channel_checker.genblk6.genblk1.ap_B_EXIT_RESET
+     proven    non_vacuous    testbench.asserts_provider.B_channel_checker.genblk7.ap_B_BVALID_until_BREADY
+     proven    non_vacuous    testbench.asserts_provider.B_channel_checker.genblk8.genblk1.ap_B_READY_MAXWAIT
+
+   Cover List
+     Status         Name
+     covered        testbench.assumes_provider.AR_channel_checker.witness.wp_ARREADY_before_ARVALID
+     covered        testbench.assumes_provider.AR_channel_checker.witness.wp_ARVALID_before_ARREADY
+     covered        testbench.assumes_provider.AR_channel_checker.witness.wp_ARVALID_with_ARREADY
+     covered        testbench.asserts_provider.AR_channel_checker.witness.wp_ARREADY_before_ARVALID
+     covered        testbench.asserts_provider.AR_channel_checker.witness.wp_ARVALID_before_ARREADY
+     covered        testbench.asserts_provider.AR_channel_checker.witness.wp_ARVALID_with_ARREADY
+     covered        testbench.assumes_provider.R_channel_checker.witness.wp_READ_RESP_DECERR
+     covered        testbench.assumes_provider.R_channel_checker.witness.wp_READ_RESP_OKAY
+     covered        testbench.assumes_provider.R_channel_checker.witness.wp_READ_RESP_SLVERR
+     covered        testbench.assumes_provider.R_channel_checker.witness.wp_RREADY_before_RVALID
+     covered        testbench.assumes_provider.R_channel_checker.witness.wp_RVALID_before_RREADY
+     covered        testbench.assumes_provider.R_channel_checker.witness.wp_RVALID_with_RREADY
+     covered        testbench.asserts_provider.R_channel_checker.witness.wp_READ_RESP_DECERR
+     covered        testbench.asserts_provider.R_channel_checker.witness.wp_READ_RESP_OKAY
+     covered        testbench.asserts_provider.R_channel_checker.witness.wp_READ_RESP_SLVERR
+     covered        testbench.asserts_provider.R_channel_checker.witness.wp_RREADY_before_RVALID
+     covered        testbench.asserts_provider.R_channel_checker.witness.wp_RVALID_before_RREADY
+     covered        testbench.asserts_provider.R_channel_checker.witness.wp_RVALID_with_RREADY
+     covered        testbench.assumes_provider.AW_channel_checker.witness.wp_AWREADY_before_AWVALID
+     covered        testbench.assumes_provider.AW_channel_checker.witness.wp_AWVALID_before_AWREADY
+     covered        testbench.assumes_provider.AW_channel_checker.witness.wp_AWVALID_with_AWREADY
+     covered        testbench.assumes_provider.AW_channel_checker.witness.wp_AW_B2B
+     covered        testbench.assumes_provider.AW_channel_checker.witness.wp_AW_NO_WAIT
+     covered        testbench.assumes_provider.AW_channel_checker.witness.wp_AW_WAIT
+     covered        testbench.asserts_provider.AW_channel_checker.witness.wp_AWREADY_before_AWVALID
+     covered        testbench.asserts_provider.AW_channel_checker.witness.wp_AWVALID_before_AWREADY
+     covered        testbench.asserts_provider.AW_channel_checker.witness.wp_AWVALID_with_AWREADY
+     covered        testbench.asserts_provider.AW_channel_checker.witness.wp_AW_B2B
+     covered        testbench.asserts_provider.AW_channel_checker.witness.wp_AW_NO_WAIT
+     covered        testbench.asserts_provider.AW_channel_checker.witness.wp_AW_WAIT
+     covered        testbench.assumes_provider.W_channel_checker.witness.genblk1.wp_WSTRB_ALL_VALID
+     uncoverable    testbench.assumes_provider.W_channel_checker.witness.genblk1.wp_WSTRB_NOT_ALL_VALID
+     covered        testbench.assumes_provider.W_channel_checker.witness.wp_WREADY_before_WVALID
+     covered        testbench.assumes_provider.W_channel_checker.witness.wp_WVALID_WVALID_LAST_BURST
+     covered        testbench.assumes_provider.W_channel_checker.witness.wp_WVALID_before_WREADY
+     covered        testbench.assumes_provider.W_channel_checker.witness.wp_WVALID_with_WREADY
+     covered        testbench.asserts_provider.W_channel_checker.witness.genblk1.wp_WSTRB_ALL_VALID
+     uncoverable    testbench.asserts_provider.W_channel_checker.witness.genblk1.wp_WSTRB_NOT_ALL_VALID
+     covered        testbench.asserts_provider.W_channel_checker.witness.wp_WREADY_before_WVALID
+     covered        testbench.asserts_provider.W_channel_checker.witness.wp_WVALID_WVALID_LAST_BURST
+     covered        testbench.asserts_provider.W_channel_checker.witness.wp_WVALID_before_WREADY
+     covered        testbench.asserts_provider.W_channel_checker.witness.wp_WVALID_with_WREADY
+     covered        testbench.assumes_provider.B_channel_checker.witness.wp_BREADY_before_BVALID
+     covered        testbench.assumes_provider.B_channel_checker.witness.wp_BVALID_before_BREADY
+     covered        testbench.assumes_provider.B_channel_checker.witness.wp_BVALID_with_BREADY
+     covered        testbench.assumes_provider.B_channel_checker.witness.wp_WRITE_RESP_DECERR
+     covered        testbench.assumes_provider.B_channel_checker.witness.wp_WRITE_RESP_OKAY
+     covered        testbench.assumes_provider.B_channel_checker.witness.wp_WRITE_RESP_SLVERR
+     covered        testbench.asserts_provider.B_channel_checker.witness.wp_BREADY_before_BVALID
+     covered        testbench.asserts_provider.B_channel_checker.witness.wp_BVALID_before_BREADY
+     covered        testbench.asserts_provider.B_channel_checker.witness.wp_BVALID_with_BREADY
+     covered        testbench.asserts_provider.B_channel_checker.witness.wp_WRITE_RESP_DECERR
+     covered        testbench.asserts_provider.B_channel_checker.witness.wp_WRITE_RESP_OKAY
+     covered        testbench.asserts_provider.B_channel_checker.witness.wp_WRITE_RESP_SLVERR
+
+     Constraints List
+     Constrain    Status        Name
+     constrained              testbench.assumes_provider.AR_channel_checker.axi4lite_defs.cp_AR_unsupported_axi4l
+     constrained non_vacuous  testbench.assumes_provider.AR_channel_checker.genblk11.cp_AR_STABLE_ARPROT
+     constrained non_vacuous  testbench.assumes_provider.AR_channel_checker.genblk15.genblk1.cp_AR_EXIT_RESET
+     constrained non_vacuous  testbench.assumes_provider.AR_channel_checker.genblk16.cp_AR_ARVALID_until_ARREADY
+     constrained non_vacuous  testbench.assumes_provider.AR_channel_checker.genblk17.genblk1.cp_AR_READY_MAXWAIT
+     constrained non_vacuous  testbench.assumes_provider.AR_channel_checker.genblk3.cp_AR_STABLE_ARADDR
+     constrained non_vacuous  testbench.assumes_provider.AR_channel_checker.genblk8.genblk1.cp_AR_UNSUPPORTED_EXCLUSIVE
+     constrained              testbench.asserts_provider.AR_channel_checker.axi4lite_defs.cp_AR_unsupported_axi4l
+     constrained              testbench.assumes_provider.R_channel_checker.axi4lite_defs.cp_R_unsupported_axi4l
+     constrained non_vacuous  testbench.assumes_provider.R_channel_checker.deadlock_cons.cp_R_READY_MAXWAIT
+     constrained non_vacuous  testbench.assumes_provider.R_channel_checker.genblk3.cp_R_STABLE_RDATA
+     constrained non_vacuous  testbench.assumes_provider.R_channel_checker.genblk4.cp_R_STABLE_RRESP
+     constrained non_vacuous  testbench.assumes_provider.R_channel_checker.genblk5.genblk1.cp_R_UNSUPPORTED_RESPONSE
+     constrained non_vacuous  testbench.assumes_provider.R_channel_checker.genblk6.cp_R_STABLE_RLAST
+     constrained non_vacuous  testbench.assumes_provider.R_channel_checker.genblk7.cp_R_STABLE_RUSER
+     constrained non_vacuous  testbench.assumes_provider.R_channel_checker.genblk8.genblk1.cp_R_EXIT_RESET
+     constrained non_vacuous  testbench.assumes_provider.R_channel_checker.genblk9.cp_R_RVALID_until_RREADY
+     constrained              testbench.asserts_provider.R_channel_checker.axi4lite_defs.cp_R_unsupported_axi4l
+     constrained              testbench.assumes_provider.AW_channel_checker.axi4lite_defs.cp_AW_unsupported_axi4l
+     constrained non_vacuous  testbench.assumes_provider.AW_channel_checker.genblk10.cp_AW_STABLE_AWPROT
+     constrained non_vacuous  testbench.assumes_provider.AW_channel_checker.genblk12.genblk1.cp_AW_EXIT_RESET
+     constrained non_vacuous  testbench.assumes_provider.AW_channel_checker.genblk13.cp_AW_AWVALID_until_AWREADY
+     constrained non_vacuous  testbench.assumes_provider.AW_channel_checker.genblk14.genblk1.cp_AW_READY_MAXWAIT
+     constrained non_vacuous  testbench.assumes_provider.AW_channel_checker.genblk3.cp_AW_STABLE_AWADDR
+     vacuous     vacuous      testbench.assumes_provider.AW_channel_checker.genblk3.cp_AW_address_alignment
+     constrained non_vacuous  testbench.assumes_provider.AW_channel_checker.genblk9.genblk1.cp_AW_UNSUPPORTED_EXCLUSIVE
+     constrained              testbench.asserts_provider.AW_channel_checker.axi4lite_defs.cp_AW_unsupported_axi4l
+     constrained              testbench.assumes_provider.W_channel_checker.axi4lite_defs.cp_W_unsupported_axi4l
+     constrained non_vacuous  testbench.assumes_provider.W_channel_checker.genblk3.cp_W_STABLE_WDATA
+     constrained non_vacuous  testbench.assumes_provider.W_channel_checker.genblk4.cp_W_STABLE_WSTRB
+     constrained non_vacuous  testbench.assumes_provider.W_channel_checker.genblk4.genblk1.cp_W_FULL_TRANSACTION_OPTIONAL_WSTRB
+     constrained non_vacuous  testbench.assumes_provider.W_channel_checker.genblk7.genblk1.cp_W_EXIT_RESET
+     constrained non_vacuous  testbench.assumes_provider.W_channel_checker.genblk8.cp_W_AWVALID_until_AWREADY
+     constrained non_vacuous  testbench.assumes_provider.W_channel_checker.genblk9.genblk1.cp_W_READY_MAXWAIT
+     constrained              testbench.asserts_provider.W_channel_checker.axi4lite_defs.cp_W_unsupported_axi4l
+     constrained              testbench.assumes_provider.B_channel_checker.axi4lite_defs.cp_B_unsupported_axi4l
+     constrained non_vacuous  testbench.assumes_provider.B_channel_checker.genblk3.cp_AW_STABLE_BRESP
+     constrained non_vacuous  testbench.assumes_provider.B_channel_checker.genblk4.genblk1.cp_B_UNSUPPORTED_RESPONSE
+     constrained non_vacuous  testbench.assumes_provider.B_channel_checker.genblk5.cp_AW_STABLE_BUSER
+     constrained non_vacuous  testbench.assumes_provider.B_channel_checker.genblk6.genblk1.cp_B_EXIT_RESET
+     constrained non_vacuous  testbench.assumes_provider.B_channel_checker.genblk7.cp_B_BVALID_until_BREADY
+     constrained non_vacuous  testbench.assumes_provider.B_channel_checker.genblk8.genblk1.cp_B_READY_MAXWAIT
+     constrained              testbench.asserts_provider.B_channel_checker.axi4lite_defs.cp_B_unsupported_axi4l
+     constrained              ARESETn==1

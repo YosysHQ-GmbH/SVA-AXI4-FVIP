@@ -1,0 +1,54 @@
+[tasks]
+prove
+cover
+
+[options]
+prove: mode prove
+cover: mode cover
+
+[engines]
+smtbmc boolector
+
+[script]
+# Read packages first
+read -sv amba_axi4_protocol_checker_pkg.sv
+read -sv amba_axi4_single_interface_requirements.sv
+read -sv amba_axi4_definition_of_axi4_lite.sv
+read -sv amba_axi4_atomic_accesses.sv
+read -sv amba_axi4_transaction_structure.sv
+read -sv amba_axi4_transaction_attributes.sv
+
+# new checkers
+read -sv amba_axi4_write_response_dependencies.sv
+read -sv amba_axi4_exclusive_access_source_perspective.sv
+
+read -sv amba_axi4_read_address_channel.sv
+read -sv amba_axi4_read_data_channel.sv
+read -sv amba_axi4_write_data_channel.sv
+read -sv amba_axi4_write_response_channel.sv
+read -sv amba_axi4_write_address_channel.sv
+read -sv amba_axi4_protocol_checker.sv
+read -sv AxiLite4FormalComponent.v
+read -sv amba_axi4_protocol_checker_wrapper.sv
+
+prep -flatten -top AxiLite4FormalComponent
+
+[files]
+../../src/amba_axi4_protocol_checker_pkg.sv
+../../src/axi4_spec/amba_axi4_single_interface_requirements.sv
+../../src/axi4_spec/amba_axi4_definition_of_axi4_lite.sv
+../../src/axi4_spec/amba_axi4_atomic_accesses.sv
+../../src/axi4_spec/amba_axi4_transaction_structure.sv
+../../src/axi4_spec/amba_axi4_transaction_attributes.sv
+
+../../src/amba_axi4_write_response_channel.sv
+../../src/amba_axi4_write_address_channel.sv
+../../src/amba_axi4_write_data_channel.sv
+../../src/amba_axi4_read_data_channel.sv
+../../src/amba_axi4_read_address_channel.sv
+../../src/amba_axi4_protocol_checker.sv
+../../src/axi4_lib/amba_axi4_write_response_dependencies.sv
+../../src/axi4_lib/amba_axi4_exclusive_access_source_perspective.sv
+
+amba_axi4_protocol_checker_wrapper.sv
+AxiLite4FormalComponent.v

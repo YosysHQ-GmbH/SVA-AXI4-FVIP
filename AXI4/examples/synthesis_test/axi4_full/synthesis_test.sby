@@ -1,0 +1,45 @@
+[tasks]
+prove
+cover
+
+[options]
+prove: mode bmc 
+depth 18
+cover: mode cover
+
+[engines]
+smtbmc boolector
+
+[script]
+# Read packages first
+read -sv amba_axi4_protocol_checker_pkg.sv
+read -sv amba_axi4_single_interface_requirements.sv
+read -sv amba_axi4_definition_of_axi4_lite.sv
+read -sv amba_axi4_atomic_accesses.sv
+read -sv amba_axi4_transaction_structure.sv
+read -sv amba_axi4_transaction_attributes.sv
+
+# new checkers
+read -sv amba_axi4_write_response_dependencies.sv
+read -sv amba_axi4_exclusive_access_source_perspective.sv
+#read -sv exclusive_access_checker.sv
+
+# Then the IP
+read -incdir ../../../../../src
+read -sv top_cell.sv
+read -sv testbench.sv
+# Report later: If I run without flatten, all properties with $rose fails
+prep -flatten -top testbench
+
+[files]
+top_cell.sv
+testbench.sv
+../../../src/amba_axi4_protocol_checker_pkg.sv
+../../../src/axi4_spec/amba_axi4_single_interface_requirements.sv
+../../../src/axi4_spec/amba_axi4_definition_of_axi4_lite.sv
+../../../src/axi4_spec/amba_axi4_atomic_accesses.sv
+../../../src/axi4_spec/amba_axi4_transaction_structure.sv
+../../../src/axi4_spec/amba_axi4_transaction_attributes.sv
+../../../src/axi4_lib/amba_axi4_write_response_dependencies.sv
+../../../src/axi4_lib/amba_axi4_exclusive_access_source_perspective.sv
+#../../../src/axi4_lib/exclusive_access_checker.sv
