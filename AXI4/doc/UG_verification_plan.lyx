@@ -11337,7 +11337,7 @@ literal "false"
 \end_inset
 
 occurs, it is suggested to cancel the run and fix any conflictive assumption.
- It is also suggested to use the template files in SVA-AXI-Properties/AXI/AXI4/t
+ It is also suggested to use the template files in SVA-AXI4-FVIP/AXI/AXI4/t
 emplates as a guidance to bind/instantiate this IP.
 \end_layout
 

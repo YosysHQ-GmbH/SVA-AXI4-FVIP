@@ -19,14 +19,14 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 ## AMBA AXI4 Quick Demos
 #### AMBA AXI4-Stream Examples
-* [Example 01: Source to sink (self check)](https://github.com/YosysHQ-GmbH/SVA-AXI-Properties/tree/master/AXI/AXI4_STREAM/examples/dd01_self_check)
+* [Example 01: Source to sink (self check)](https://github.com/YosysHQ-GmbH/SVA-AXI4-FVIP/tree/master/AXI/AXI4_STREAM/examples/dd01_self_check)
 * [Example 02: Verify another VIP (faxis_slave)]()
-* [Example 03: AXI4-Stream FIFO from Alex Forencich's](https://github.com/YosysHQ-GmbH/SVA-AXI-Properties/tree/master/AXI/AXI4_STREAM/examples/dd03_axis_fifo)
-* [Example 04: AXI4-Stream Mat - mul from rahulsridhar5/PLCgroup10](https://github.com/YosysHQ-GmbH/SVA-AXI-Properties/tree/master/AXI/AXI4_STREAM/examples/dd04_mat_mul)
-* [Example 05: VHDLwhiz FIFO (Mixed VHDL/SystemVerilog](https://github.com/YosysHQ-GmbH/SVA-AXI-Properties/tree/master/AXI/AXI4_STREAM/examples/dd05_axi_fifo_vhdlwiz)
+* [Example 03: AXI4-Stream FIFO from Alex Forencich's](https://github.com/YosysHQ-GmbH/SVA-AXI4-FVIP/tree/master/AXI/AXI4_STREAM/examples/dd03_axis_fifo)
+* [Example 04: AXI4-Stream Mat - mul from rahulsridhar5/PLCgroup10](https://github.com/YosysHQ-GmbH/SVA-AXI4-FVIP/tree/master/AXI/AXI4_STREAM/examples/dd04_mat_mul)
+* [Example 05: VHDLwhiz FIFO (Mixed VHDL/SystemVerilog](https://github.com/YosysHQ-GmbH/SVA-AXI4-FVIP/tree/master/AXI/AXI4_STREAM/examples/dd05_axi_fifo_vhdlwiz)
 ### AMBA AXI4 Lite Examples
-* [Example 01: Spinal HDL Component (lite)](https://github.com/YosysHQ-GmbH/SVA-AXI-Properties/tree/master/AXI/AXI4/examples/spinal_axi4_lite)
-* [Example 02: Synthesis test (for testing purposes)](https://github.com/YosysHQ-GmbH/SVA-AXI-Properties/tree/master/AXI/AXI4/examples/synthesis_test)
+* [Example 01: Spinal HDL Component (lite)](https://github.com/YosysHQ-GmbH/SVA-AXI4-FVIP/tree/master/AXI/AXI4/examples/spinal_axi4_lite)
+* [Example 02: Synthesis test (for testing purposes)](https://github.com/YosysHQ-GmbH/SVA-AXI4-FVIP/tree/master/AXI/AXI4/examples/synthesis_test)
 #### AMBA AXI4 Full Examples
 ---
 
