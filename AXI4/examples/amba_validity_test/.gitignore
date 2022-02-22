@@ -1,2 +1,4 @@
 .*.swp
 Axi4*
+/amba_validity_test_prove/
+/amba_validity_test_cover/
