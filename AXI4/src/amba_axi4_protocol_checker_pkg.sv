@@ -136,6 +136,8 @@ package amba_axi4_protocol_checker_pkg;
       // To define if the formal IP should verify exclusive transactions,
       // recommended = yes, definetely, if the user IP supports it.
       bit 	   EXCLUSIVE_ACCESS;
+      // Enable support for the optional AXI low-power interface extension
+      bit 	   OPTIONAL_LP;
    } axi4_checker_params_t;
 endpackage // amba_axi4_protocol_checker_pkg
 `endif

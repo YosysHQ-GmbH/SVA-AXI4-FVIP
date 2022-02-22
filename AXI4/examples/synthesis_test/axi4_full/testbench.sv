@@ -44,7 +44,8 @@ localparam axi4_checker_params_t
 	      OPTIONAL_WSTRB:    1,
 	      FULL_WR_STRB:      1,
 	      OPTIONAL_RESET:    1,
-	      EXCLUSIVE_ACCESS:  1};
+	      EXCLUSIVE_ACCESS:  1,
+	      OPTIONAL_LP:       0};
 bind testbench amba_axi4_protocol_checker #(.cfg(cfg_cons)) assumes_provider (.*);
 
 // Connect a monitor entity
@@ -73,7 +74,8 @@ localparam axi4_checker_params_t
 	     OPTIONAL_WSTRB:    1,
 	     FULL_WR_STRB:      1,
 	     OPTIONAL_RESET:    1,
-	     EXCLUSIVE_ACCESS:  1};
+	     EXCLUSIVE_ACCESS:  1,
+	     OPTIONAL_LP:       0};
 bind testbench amba_axi4_protocol_checker #(.cfg(cfg_mon)) asserts_provider (.*);
 
 // The actual interface
@@ -102,7 +104,8 @@ module testbench
       OPTIONAL_WSTRB:    1,
       FULL_WR_STRB:      1,
       OPTIONAL_RESET:    1,
-      EXCLUSIVE_ACCESS:  1},
+      EXCLUSIVE_ACCESS:  1,
+      OPTIONAL_LP:       0},
     // Read only
     localparam unsigned STRB_WIDTH = cfg.DATA_WIDTH/8)
    (input wire                         ACLK,

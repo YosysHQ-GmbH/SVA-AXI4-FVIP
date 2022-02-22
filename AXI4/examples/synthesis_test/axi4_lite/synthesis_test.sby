@@ -17,6 +17,8 @@ read -sv amba_axi4_definition_of_axi4_lite.sv
 read -sv amba_axi4_atomic_accesses.sv
 read -sv amba_axi4_transaction_structure.sv
 read -sv amba_axi4_transaction_attributes.sv
+read -sv amba_axi4_low_power_interface.sv
+read -sv amba_axi4_low_power_channel.sv
 
 # new checkers
 read -sv amba_axi4_write_response_dependencies.sv
@@ -33,10 +35,12 @@ prep -flatten -top testbench
 top_cell.sv
 testbench.sv
 ../../../src/amba_axi4_protocol_checker_pkg.sv
+../../../src/amba_axi4_low_power_channel.sv
 ../../../src/axi4_spec/amba_axi4_single_interface_requirements.sv
 ../../../src/axi4_spec/amba_axi4_definition_of_axi4_lite.sv
 ../../../src/axi4_spec/amba_axi4_atomic_accesses.sv
 ../../../src/axi4_spec/amba_axi4_transaction_structure.sv
 ../../../src/axi4_spec/amba_axi4_transaction_attributes.sv
+../../../src/axi4_spec/amba_axi4_low_power_interface.sv
 ../../../src/axi4_lib/amba_axi4_write_response_dependencies.sv
 ../../../src/axi4_lib/amba_axi4_exclusive_access_source_perspective.sv

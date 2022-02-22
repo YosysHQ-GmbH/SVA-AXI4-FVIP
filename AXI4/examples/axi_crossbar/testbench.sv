@@ -32,6 +32,7 @@ bind axi_crossbar amba_axi4_protocol_checker
       MAXWAIT:           20,
       VERIFY_AGENT_TYPE: amba_axi4_protocol_checker_pkg::SOURCE,
       PROTOCOL_TYPE:     amba_axi4_protocol_checker_pkg::AXI4FULL,
+      INTERFACE_REQS:    1,
       ENABLE_COVER:      1,
       ENABLE_XPROP:      0,
       ARM_RECOMMENDED:   1,
@@ -39,7 +40,8 @@ bind axi_crossbar amba_axi4_protocol_checker
       OPTIONAL_WSTRB:    1,
       FULL_WR_STRB:      1,
       OPTIONAL_RESET:    0,
-      EXCLUSIVE_ACCESS:  1})
+      EXCLUSIVE_ACCESS:  1,
+      OPTIONAL_LP:       0})
 source_chk (
 	    .ACLK(clk),
 	    .ARESETn(!rst),
@@ -111,6 +113,7 @@ bind axi_crossbar amba_axi4_protocol_checker
       MAXWAIT:           20,
       VERIFY_AGENT_TYPE: amba_axi4_protocol_checker_pkg::DESTINATION,
       PROTOCOL_TYPE:     amba_axi4_protocol_checker_pkg::AXI4FULL,
+      INTERFACE_REQS:    1,
       ENABLE_COVER:      1,
       ENABLE_XPROP:      0,
       ARM_RECOMMENDED:   0,
@@ -118,7 +121,8 @@ bind axi_crossbar amba_axi4_protocol_checker
       OPTIONAL_WSTRB:    1,
       FULL_WR_STRB:      1,
       OPTIONAL_RESET:    0,
-      EXCLUSIVE_ACCESS:  1})
+      EXCLUSIVE_ACCESS:  1,
+      OPTIONAL_LP:       0})
 dest_check (
 	    .ACLK(clk),
 	    .ARESETn(!rst),
