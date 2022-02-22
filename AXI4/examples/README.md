@@ -12,12 +12,6 @@ This is an AXI4 crossbar found in github. The YosysHQ Formal IP is connected to 
 ### Result expectation
 This design is expected to fail and CEX may require some analysis.
 
-## Sandbox
-This is not really a test but a directory to play around new helper code/assertions before adding them to the corresponding place.
-
-### Result expectation
-NA.
-
 ## The spinal axi4 lite
 A very simple AXI4-lite destination IP written in SpinalHDL. All the files are provided and the RTL is already generated.
 
