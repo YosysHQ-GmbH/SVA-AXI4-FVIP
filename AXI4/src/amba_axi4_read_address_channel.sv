@@ -786,7 +786,7 @@ module amba_axi4_read_address_channel
          if(cfg.VERIFY_AGENT_TYPE != DESTINATION) begin
             if(cfg.PROTOCOL_TYPE == AXI4FULL) begin
                for(genvar i = 0; i < $clog2(cfg.MAX_RD_LENGTH); i++) begin: read_transaction_len
-                  wp_AR_LEN_TRANSFERS: cover property(AR_request_accepted && ARLEN == i);
+                  wp_AR_LEN_TRANSFERS: cover property(AR_request_accepted && ARLEN == i)
                   $info("Witnessed: Burst lenght of size 0 to MAX_RD_LENGTH",
                         "(A3.4.1 Address strucutre, pA3-46).");
                end
@@ -808,7 +808,7 @@ module amba_axi4_read_address_channel
            $info("Witnessed: Handshake process pA3-39, Figure A3-4 VALID with READY handshake capability.");
 	 if(cfg.PROTOCOL_TYPE == AXI4FULL && cfg.VERIFY_AGENT_TYPE != DESTINATION) begin
 	    for(genvar i = 0; i <= cfg.MAX_RD_LENGTH-1; i++) begin: read_transaction_len
-	       wp_AW_len_transfers: cover property(AR_request_accepted && ARLEN == i[7:0]);
+	       wp_AW_len_transfers: cover property(AR_request_accepted && ARLEN == i[7:0])
 	       $info("Witnessed: Wrapping burst len of cfg.MAX_RD_LENGTH transfers.");
 	    end
 	 end
