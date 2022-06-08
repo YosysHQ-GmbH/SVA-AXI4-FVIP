@@ -246,7 +246,7 @@ module amba_axi4_write_response_dependencies
    bit [$clog2(cfg.MAX_WR_BURSTS):0] outstandingAW;
 
    // Instantiate the forward progress counter for AW
-   localparam flow_t RESOLUTION = cfg.VERIFY_AGENT_TYPE inside {MONITOR, DESTINATION} ? GUARANTEE : ASSUME;
+   localparam flow_t RESOLUTION = (cfg.VERIFY_AGENT_TYPE  == MONITOR || cfg.VERIFY_AGENT_TYPE ==  DESTINATION) ? GUARANTEE : ASSUME;
 
    forward_progress_scoreboard
      #(.SYMBOL_WIDTH(cfg.ID_WIDTH),
