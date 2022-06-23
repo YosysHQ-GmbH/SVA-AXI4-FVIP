@@ -35,6 +35,7 @@ localparam axi4_checker_params_t
 	      MAXWAIT:           16,
 	      VERIFY_AGENT_TYPE: CONSTRAINT,
 	      PROTOCOL_TYPE:     AXI4FULL,
+	      INTERFACE_REQS:    1,
 	      ENABLE_COVER:      1,
 	      ENABLE_XPROP:      1,
 	      ARM_RECOMMENDED:   1,
@@ -42,7 +43,8 @@ localparam axi4_checker_params_t
 	      OPTIONAL_WSTRB:    1,
 	      FULL_WR_STRB:      1,
 	      OPTIONAL_RESET:    1,
-	      EXCLUSIVE_ACCESS:  1};
+	      EXCLUSIVE_ACCESS:  1,
+	      OPTIONAL_LP:       0};
 bind testbench amba_axi4_protocol_checker #(.cfg(cfg_cons)) assumes_provider (.*);
 
 // Connect a monitor entity
@@ -63,6 +65,7 @@ localparam axi4_checker_params_t
 	     MAXWAIT:           16,
 	     VERIFY_AGENT_TYPE: MONITOR,
 	     PROTOCOL_TYPE:     AXI4FULL,
+	     INTERFACE_REQS:    1,
 	     ENABLE_COVER:      1,
 	     ENABLE_XPROP:      1,
 	     ARM_RECOMMENDED:   1,
@@ -70,7 +73,8 @@ localparam axi4_checker_params_t
 	     OPTIONAL_WSTRB:    1,
 	     FULL_WR_STRB:      1,
 	     OPTIONAL_RESET:    1,
-	     EXCLUSIVE_ACCESS:  1};
+	     EXCLUSIVE_ACCESS:  1,
+	     OPTIONAL_LP:       0};
 bind testbench amba_axi4_protocol_checker #(.cfg(cfg_mon)) asserts_provider (.*);
 
 // The actual interface
@@ -91,6 +95,7 @@ module testbench
       MAXWAIT:           16,
       VERIFY_AGENT_TYPE: SOURCE,
       PROTOCOL_TYPE:     AXI4FULL,
+      INTERFACE_REQS:    1,
       ENABLE_COVER:      1,
       ENABLE_XPROP:      1,
       ARM_RECOMMENDED:   1,
@@ -98,7 +103,8 @@ module testbench
       OPTIONAL_WSTRB:    1,
       FULL_WR_STRB:      1,
       OPTIONAL_RESET:    1,
-      EXCLUSIVE_ACCESS:  1},
+      EXCLUSIVE_ACCESS:  1,
+      OPTIONAL_LP:       0},
     // Read only
     localparam unsigned STRB_WIDTH = cfg.DATA_WIDTH/8)
    (input wire                         ACLK,
@@ -151,12 +157,15 @@ module testbench
     input wire 			       RLAST,
     input wire [cfg.RUSER_WIDTH-1:0]   RUSER,
     input wire 			       RVALID,
-    input wire 			       RREADY);
+    input wire 			       RREADY,
+    // Low Power Interface
+    input wire 			       CSYSREQ,
+    input wire 			       CSYSACK,
+    input wire 			       CACTIVE);
    /*		 ><><><><><><><><><><><><><><><><><><><><             *
     *		      AMBA Simulation Assertion Suite                 *
     *		 ><><><><><><><><><><><><><><><><><><><><	      */
-   Axi4PC amba_assertions
-     (.*, .CACTIVE(), .CSYSREQ(), .CSYSACK());
+   Axi4PC amba_assertions (.*);
    defparam amba_assertions.DATA_WIDTH   = cfg.DATA_WIDTH;
    defparam amba_assertions.MAXRBURSTS   = cfg.MAX_RD_BURSTS;
    defparam amba_assertions.MAXWBURSTS   = cfg.MAX_WR_BURSTS;

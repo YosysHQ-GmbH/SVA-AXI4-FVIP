@@ -22,6 +22,8 @@ $read_verilog_cmd  $std_ver  ../../src/axi4_spec/amba_axi4_definition_of_axi4_li
 $read_verilog_cmd  $std_ver  ../../src/axi4_spec/amba_axi4_atomic_accesses.sv
 $read_verilog_cmd  $std_ver  ../../src/axi4_spec/amba_axi4_transaction_structure.sv
 $read_verilog_cmd  $std_ver  ../../src/axi4_spec/amba_axi4_transaction_attributes.sv
+$read_verilog_cmd  $std_ver  ../../src/axi4_spec/amba_axi4_low_power_interface.sv
+$read_verilog_cmd  $std_ver  ../../src/amba_axi4_low_power_channel.sv
 
 $read_verilog_cmd  $std_ver  ./amba_axi4_protocol_checker.sv
 $read_verilog_cmd  $std_ver  ../../src/amba_axi4_write_response_channel.sv

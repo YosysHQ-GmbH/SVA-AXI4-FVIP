@@ -32,6 +32,7 @@ bind AxiLite4FormalComponent amba_axi4_protocol_checker
       MAXWAIT:           16,
       VERIFY_AGENT_TYPE: amba_axi4_protocol_checker_pkg::SOURCE,
       PROTOCOL_TYPE:     amba_axi4_protocol_checker_pkg::AXI4LITE,
+      INTERFACE_REQS:    1,
       ENABLE_COVER:      1,
       ENABLE_XPROP:      1,
       ARM_RECOMMENDED:   1,
@@ -39,7 +40,8 @@ bind AxiLite4FormalComponent amba_axi4_protocol_checker
       OPTIONAL_WSTRB:    0,
       FULL_WR_STRB:      0,
       OPTIONAL_RESET:    0,
-      EXCLUSIVE_ACCESS:  1})
+      EXCLUSIVE_ACCESS:  1,
+      OPTIONAL_LP:       0})
 spinal_test (.ACLK(clk),
 	     .ARESETn(reset),
 

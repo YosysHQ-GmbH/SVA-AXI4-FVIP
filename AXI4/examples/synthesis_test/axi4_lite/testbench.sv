@@ -158,7 +158,11 @@ module testbench
     input wire 			       RLAST,
     input wire [cfg.RUSER_WIDTH-1:0]   RUSER,
     input wire 			       RVALID,
-    input wire 			       RREADY);
+    input wire 			       RREADY,
+    // Low Power Interface
+    input wire 			       CSYSREQ,
+    input wire 			       CSYSACK,
+    input wire 			       CACTIVE);
    /*		 ><><><><><><><><><><><><><><><><><><><><             *
     *		        Back to back connection                       *
     *		 ><><><><><><><><><><><><><><><><><><><><	      */
