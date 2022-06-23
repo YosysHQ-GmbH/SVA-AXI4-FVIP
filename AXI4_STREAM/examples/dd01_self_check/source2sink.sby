@@ -7,8 +7,8 @@ provemode: mode prove
 covermode: mode cover
 
 [engines]
-provemode: smtbmc
-covermode: smtbmc
+provemode: smtbmc --keep-going boolector
+covermode: smtbmc boolector
 
 [script]
 provemode: read -sv amba_axi4_stream_pkg.sv

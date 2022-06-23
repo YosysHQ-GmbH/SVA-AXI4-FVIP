@@ -7,7 +7,7 @@ provemode: mode prove
 covermode: mode cover
 
 [engines]
-provemode: smtbmc boolector
+provemode: smtbmc --keep-going boolector
 covermode: smtbmc boolector
 
 [script]

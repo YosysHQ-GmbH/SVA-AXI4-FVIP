@@ -8,7 +8,8 @@ depth 64
 cover: mode cover
 
 [engines]
-smtbmc boolector
+prove: smtbmc --keep-going boolector
+cover: smtbmc boolector
 
 [script]
 # Read packages first

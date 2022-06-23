@@ -9,7 +9,8 @@ cover: mode cover
 smtc initial_values.smt
 
 [engines]
-smtbmc boolector
+prove: smtbmc --keep-going boolector
+cover: smtbmc boolector
 
 [script]
 # Read packages first

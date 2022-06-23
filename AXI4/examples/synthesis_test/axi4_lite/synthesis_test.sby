@@ -7,7 +7,8 @@ prove: mode bmc
 cover: mode cover
 
 [engines]
-smtbmc boolector
+prove: smtbmc --keep-going boolector
+cover: smtbmc boolector
 
 [script]
 # Read packages first
