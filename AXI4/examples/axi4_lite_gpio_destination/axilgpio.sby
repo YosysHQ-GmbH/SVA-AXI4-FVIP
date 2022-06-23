@@ -42,8 +42,7 @@ read -sv axilgpio.v
 read -sv yosyshq_lite_source.sv
 
 # Elaborate
-# Report later: If I run without flatten, all properties with $rose fails
-prep -flatten -top axilgpio
+prep -top axilgpio
 
 [files]
 # Packages

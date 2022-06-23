@@ -47,8 +47,7 @@ read -sv priority_encoder.v
 read -sv axi_crossbar_rd.v
 
 
-# Report later: If I run without flatten, all properties with $rose fails
-prep -flatten -top axi_crossbar
+prep -top axi_crossbar
 
 [files]
 ../../src/amba_axi4_write_response_channel.sv

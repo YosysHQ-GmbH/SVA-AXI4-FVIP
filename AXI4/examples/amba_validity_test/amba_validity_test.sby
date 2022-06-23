@@ -43,8 +43,7 @@ read -sv Axi4LitePC_message_undefs.v
 read -sv Axi4PC.sv
 read -sv Axi4LitePC.sv
 
-# Report later: If I run without flatten, all properties with $rose fails
-prep -flatten -top testbench
+prep -top testbench
 
 [files]
 top_cell.sv

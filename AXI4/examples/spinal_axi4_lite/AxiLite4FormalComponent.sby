@@ -34,7 +34,7 @@ read -sv amba_axi4_protocol_checker.sv
 read -sv AxiLite4FormalComponent.v
 read -sv amba_axi4_protocol_checker_wrapper.sv
 
-prep -flatten -top AxiLite4FormalComponent
+prep -top AxiLite4FormalComponent
 
 [files]
 ../../src/amba_axi4_protocol_checker_pkg.sv

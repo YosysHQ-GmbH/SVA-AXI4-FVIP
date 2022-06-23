@@ -41,8 +41,7 @@ read -sv <dut_file>
 read -sv <bind_file_from_template_dir>
 
 # Elaborate
-# Report later: If I run without flatten, all properties with $rose fails
-prep -flatten -top <dut_or_top>
+prep -top <dut_or_top>
 
 [files]
 # Packages

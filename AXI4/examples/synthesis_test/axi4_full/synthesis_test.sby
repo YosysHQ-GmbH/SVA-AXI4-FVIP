@@ -31,8 +31,7 @@ read -sv amba_axi4_exclusive_access_source_perspective.sv
 read -incdir ../../../../../src
 read -sv top_cell.sv
 read -sv testbench.sv
-# Report later: If I run without flatten, all properties with $rose fails
-prep -flatten -top testbench
+prep -top testbench
 
 [files]
 top_cell.sv
