@@ -19,9 +19,12 @@ read -sv amba_axi4_definition_of_axi4_lite.sv
 read -sv amba_axi4_atomic_accesses.sv
 read -sv amba_axi4_transaction_structure.sv
 read -sv amba_axi4_transaction_attributes.sv
+read -sv amba_axi4_low_power_interface.sv
+read -sv amba_axi4_low_power_channel.sv
 
 # This is a checker, not a package
 read -sv amba_axi4_write_response_dependencies.sv
+read -sv amba_axi4_exclusive_access_source_perspective.sv
 
 # The modules containing the properties
 read -sv amba_axi4_protocol_checker.sv
@@ -38,18 +41,20 @@ read -sv <dut_file>
 read -sv <bind_file_from_template_dir>
 
 # Elaborate
-# Report later: If I run without flatten, all properties with $rose fails
-prep -flatten -top <dut_or_top>
+prep -top <dut_or_top>
 
 [files]
 # Packages
 ../../src/amba_axi4_protocol_checker_pkg.sv
+../../src/amba_axi4_low_power_channel.sv
 ../../src/axi4_spec/amba_axi4_single_interface_requirements.sv
 ../../src/axi4_spec/amba_axi4_definition_of_axi4_lite.sv
 ../../src/axi4_spec/amba_axi4_atomic_accesses.sv
 ../../src/axi4_spec/amba_axi4_transaction_structure.sv
 ../../src/axi4_spec/amba_axi4_transaction_attributes.sv
-../../src/axi4_spec/amba_axi4_write_response_dependencies.sv
+../../src/axi4_spec/amba_axi4_low_power_interface.sv
+../../src/axi4_lib/amba_axi4_write_response_dependencies.sv
+../../src/axi4_lib/amba_axi4_exclusive_access_source_perspective.sv
 
 # Modules containing the properties
 ../../src/amba_axi4_protocol_checker.sv

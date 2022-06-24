@@ -7,20 +7,20 @@ provemode: mode prove
 covermode: mode cover
 
 [engines]
-provemode: smtbmc
-covermode: smtbmc
+provemode: smtbmc --keep-going boolector
+covermode: smtbmc boolector
 
 [script]
 provemode: read -sv amba_axi4_stream_pkg.sv
 provemode: read -sv amba_axi4_stream.sv
 provemode: read -sv source2sink.sv
-provemode: prep -flatten -top source2sink
+provemode: prep -top source2sink
 
 covermode: read -sv amba_axi4_stream_pkg.sv
 covermode: read -sv amba_axi4_stream.sv
 covermode: read -sv source2sink.sv
 covermode: verific -import -autocover source2sink
-covermode: prep -flatten -top source2sink
+covermode: prep -top source2sink
 
 [files]
 ../../amba_axi4_stream_pkg.sv

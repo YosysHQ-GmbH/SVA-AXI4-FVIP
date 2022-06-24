@@ -301,7 +301,7 @@ module amba_axi4_stream
     *  \ |  I| /						      * 
     *	\|===|/							      * 
     *	 '---'							      */ 
-   logic first_point;
+   logic first_point = 1;
    property exit_from_reset;
       @(posedge ACLK) 
 	first_point |-> !TVALID;

@@ -806,7 +806,7 @@ module amba_axi4_write_address_channel
 	 if(cfg.VERIFY_AGENT_TYPE != DESTINATION) begin
 	    if(cfg.PROTOCOL_TYPE == AXI4FULL) begin
 	       for(genvar i = 0; i < $clog2(cfg.MAX_WR_LENGTH); i++) begin: write_transaction_len
-		  wp_AW_LEN_TRANSFERS: cover property(AW_request_accepted && AWLEN == i);
+		  wp_AW_LEN_TRANSFERS: cover property(AW_request_accepted && AWLEN == i)
 		  $info("Witnessed: Burst lenght of size 0 to MAX_WR_LENGTH",
 			"(A3.4.1 Address strucutre, pA3-46).");
 	       end
