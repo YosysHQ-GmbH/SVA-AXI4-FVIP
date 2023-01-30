@@ -155,7 +155,7 @@ module amba_axi4_write_address_channel
    generate
       if(cfg.PROTOCOL_TYPE == AXI4LITE) begin
 	 // Configure the AXI4-Lite checker unsupported signals.
-         cp_AW_unsupported_axi4l: assume property(disable iff (!ARESETn) axi4_lite_unsupported_sig(AW_unsupported_sig))
+         cp_AW_unsupported_axi4l: assume property(axi4_lite_unsupported_sig(AW_unsupported_sig))
            else $error("Violation: For AW in AXI4-Lite, only signals described in B1.1 are",
                        "required or supported (B1.1 Definition of AXI4-Lite, pB1-126).");
          // Guard correct AXI4-Lite DATA_WIDTH since the parameter is used here.
